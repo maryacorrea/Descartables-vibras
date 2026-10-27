@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Descartables Vibras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Descartables Vibras</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>¡Hablemos!</h2>
+      <p>¿Necesitás precios, productos o cantidades para tu negocio?</p>
+      <a href="index.html" class="boton">VOLVER AL INICIO</a>
+    </section>
+
+    <section class="contacto">
+      <h2>Envianos tu consulta</h2>
+
+      <form action="https://formsubmit.co/" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+
+        <label for="producto">¿Qué producto te interesa?</label>
+        <select id="producto" name="producto" required>
+          <option value="">Elegí una opción</option>
+          <option>Vasos</option>
+          <option>Platos</option>
+          <option>Envases</option>
+          <option>Bolsas</option>
+          <option>Servilletas</option>
+          <option>Cotillón</option>
+          <option>Ofertas</option>
+          <option>Otro producto</option>
+        </select>
+
+        <label for="mensaje">Tu consulta:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos qué necesitás..." required></textarea>
+
+        <button type="submit" class="boton">ENVIAR CONSULTA</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Descartables Vibras</p>
+  </footer>
+
+</body>
+</html>
