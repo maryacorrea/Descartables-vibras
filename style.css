@@ -35,9 +35,7 @@ header {
 }
 
 header h1,
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: 'Playfair Display', Georgia, serif;
   color: var(--bordo);
   line-height: 1.25;
@@ -69,7 +67,6 @@ nav a {
 
 nav a:hover {
   color: #a46e7b;
-  text-decoration: underline;
 }
 
 main {
@@ -81,25 +78,46 @@ section {
   margin-bottom: 35px;
 }
 
-h1,
-h2,
-h3 {
-  margin-top: 0;
+.portada {
+  padding: 35px 24px;
+  background: var(--rosa-claro);
+  border-radius: 10px;
+  text-align: center;
 }
 
-p {
-  max-width: 760px;
+.portada h2 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+.rejilla,
+.destacados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 20px;
+}
+
+.categoria,
+.destacados article {
+  padding: 18px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+.categoria h3,
+.destacados h3 {
+  margin-bottom: 8px;
+}
+
+.categoria a {
+  color: var(--bordo);
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-}
-
-a {
-  transition: color 0.2s ease;
+  border-radius: 6px;
 }
 
 button,
@@ -121,7 +139,6 @@ button:hover,
 .boton:hover,
 main a.boton:hover {
   background: #8b626d;
-  color: white;
 }
 
 input,
@@ -161,12 +178,10 @@ footer {
   }
 
   main {
-    width: 92%;
     margin: 25px auto;
   }
 
-  button,
-  .boton {
-    max-width: 100%;
+  .portada {
+    padding: 25px 16px;
   }
 }
