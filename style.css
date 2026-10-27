@@ -185,3 +185,59 @@ footer {
     padding: 25px 16px;
   }
 }
+/* Encabezado delicado */
+header {
+  background: #faf7f2;
+  text-align: center;
+  padding: 30px 16px 24px;
+  border-bottom: 1px solid #eadfda;
+}
+
+header .marca {
+  color: #a47c80;
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  margin: 0 0 2px;
+}
+
+header h1 {
+  color: #805660;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 500;
+  margin: 0;
+}
+
+header .subtitulo {
+  color: #8e7774;
+  font-size: 0.92rem;
+  margin: 8px 0 0;
+}
+
+/* Menú sencillo y sin azul */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 28px;
+  padding: 16px;
+  background: #fffdfb;
+  border-bottom: 1px solid #eadfda;
+}
+
+nav a {
+  color: #805660;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 3px 0;
+}
+
+nav a:hover {
+  color: #b1838c;
+  border-bottom-color: #d9b2b5;
+}
+
