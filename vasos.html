@@ -1,58 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vasos | Descartables Vibras</title>
+  <title>Vasos y copas | Descartables Vibras</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .productos-vasos { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+    .producto-vasos { background:#fffdfb; border:1px solid #eadfda; border-radius:12px; padding:18px; text-align:center; }
+    .producto-vasos .foto { background:#f7eded; border-radius:9px; min-height:150px; display:flex; align-items:center; justify-content:center; font-size:3rem; margin-bottom:14px; }
+    .producto-vasos h2 { font-size:1.35rem; margin:8px 0; }
+    .producto-vasos p { font-size:.95rem; }
+    .producto-vasos a { display:inline-block; padding:9px 17px; border-radius:22px; background:#f8efeb; color:#805660; border:1px solid #ead9d5; text-decoration:none; font-weight:600; }
+    .volver-vasos { display:inline-block; margin:20px 0; color:#805660; text-decoration:none; }
+  </style>
 </head>
 <body>
-
   <header>
-    <h1>Descartables Vibras</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="ofertas.html">Ofertas</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
+    <p class="marca">DESCARTABLES</p>
+    <h1>Vibras</h1>
+    <p class="subtitulo">Detalles simples para celebrar bonito</p>
   </header>
 
+  <nav aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="index.html#categorias">Productos</a>
+    <a href="ofertas.html">Ofertas</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
   <main>
-    <section class="hero">
-      <h2>Vasos descartables</h2>
-      <p>Encontrá los vasos ideales para tus reuniones, cumpleaños y eventos.</p>
-      <a href="index.html" class="boton">VOLVER AL INICIO</a>
+    <a class="volver-vasos" href="index.html">← Volver al inicio</a>
+    <section>
+      <p class="etiqueta">DETALLES PARA COMPARTIR</p>
+      <h2>Vasos y copas</h2>
+      <p>Encontrá opciones prácticas y delicadas para tus reuniones, cumpleaños y celebraciones.</p>
     </section>
 
-    <section class="categorias">
-      <h2>Nuestros vasos</h2>
+    <section class="productos-vasos">
+      <article class="producto-vasos">
+        <div class="foto" aria-hidden="true">🥛</div>
+        <h2>Vasos descartables</h2>
+        <p>Una opción práctica para todos tus encuentros.</p>
+        <a href="contacto.html">Consultar producto</a>
+      </article>
 
-      <div class="grid">
-        <article class="tarjeta">
-          <h3>Vasos transparentes</h3>
-          <p>Prácticos para bebidas frías y eventos.</p>
-          <p>Consultá precios y medidas.</p>
-        </article>
+      <article class="producto-vasos">
+        <div class="foto" aria-hidden="true">🥤</div>
+        <h2>Vasos transparentes</h2>
+        <p>Ideales para servir bebidas de manera sencilla.</p>
+        <a href="contacto.html">Consultar producto</a>
+      </article>
 
-        <article class="tarjeta">
-          <h3>Vasos de colores</h3>
-          <p>Ideales para cumpleaños y celebraciones.</p>
-          <p>Consultá colores disponibles.</p>
-        </article>
-
-        <article class="tarjeta">
-          <h3>Vasos térmicos</h3>
-          <p>Una opción práctica para bebidas calientes.</p>
-          <p>Consultá tamaños disponibles.</p>
-        </article>
-      </div>
+      <article class="producto-vasos">
+        <div class="foto" aria-hidden="true">🍷</div>
+        <h2>Copas descartables</h2>
+        <p>Un detalle práctico para brindar y celebrar.</p>
+        <a href="contacto.html">Consultar producto</a>
+      </article>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Descartables Vibras</p>
+    <p>Descartables Vibras</p>
+    <p>Gracias por elegirnos ♡</p>
   </footer>
-
 </body>
 </html>
-<!-- actualizacion -->
