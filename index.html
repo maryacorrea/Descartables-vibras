@@ -1,104 +1,523 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descartables Vibras | Detalles para celebrar</title>
-  <meta name="description" content="Encontrá vasos, platos, envases, bolsas, servilletas y cotillón para tus celebraciones.">
-  <link rel="stylesheet" href="style.css">
+  <title>Descartables Vibras | Mayorista</title>
+  <meta name="description" content="Catálogo mayorista de vasos, platos, envases, bolsas, servilletas y artículos para tu negocio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --rosa: #c98f91;
+      --rosa-claro: #f1d9d4;
+      --crema: #fffaf5;
+      --beige: #eadbd0;
+      --texto: #493638;
+      --suave: #887574;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--crema);
+      color: var(--texto);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    a { color: inherit; }
+
+    .barra {
+      min-height: 88px;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: var(--crema);
+      border-bottom: 1px solid #eadbd4;
+    }
+
+    .marca {
+      text-decoration: none;
+      text-align: center;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .marca small {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 5px;
+      margin-bottom: 5px;
+    }
+
+    .marca strong {
+      font-family: cursive;
+      font-size: 35px;
+      font-weight: 400;
+      color: #a96670;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 13px;
+      color: #514044;
+      padding: 8px 0;
+    }
+
+    nav a:hover { color: var(--rosa); }
+
+    .iconos {
+      display: flex;
+      gap: 17px;
+      align-items: center;
+    }
+
+    .iconos a {
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .portada {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      min-height: 450px;
+      background: #f3e2d7;
+      overflow: hidden;
+    }
+
+    .portada-texto {
+      padding: 45px 6% 40px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background: linear-gradient(120deg, #fff8f1, #f1dfd4);
+    }
+
+    .sobrelinea {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      line-height: 1.9;
+      text-transform: uppercase;
+    }
+
+    .corazon {
+      color: var(--rosa);
+      font-size: 20px;
+      margin: 7px 0;
+    }
+
+    .portada h1 {
+      font-size: clamp(36px, 4.2vw, 58px);
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: 3px;
+      margin: 12px 0 16px;
+    }
+
+    .portada h1 span {
+      display: block;
+      font-family: cursive;
+      font-size: clamp(58px, 7vw, 90px);
+      letter-spacing: -2px;
+      color: var(--rosa);
+      margin-top: 8px;
+    }
+
+    .sello {
+      display: inline-block;
+      padding: 9px 35px;
+      border-radius: 40px;
+      background: #d9a5a1;
+      color: white;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      margin: 0 0 22px;
+    }
+
+    .portada-descripcion {
+      max-width: 370px;
+      line-height: 1.8;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .portada-foto {
+      min-height: 450px;
+      background: #ead5c7;
+    }
+
+    .portada-foto img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 450px;
+      object-fit: cover;
+    }
+
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 30px 5%;
+      background: #fff7f1;
+    }
+
+    .beneficio {
+      padding: 5px 16px;
+      text-align: center;
+      border-right: 1px solid #ead5cf;
+    }
+
+    .beneficio:last-child { border-right: none; }
+
+    .beneficio .simbolo {
+      font-size: 32px;
+      color: var(--rosa);
+      margin-bottom: 9px;
+    }
+
+    .beneficio h2 {
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      margin: 0 0 8px;
+    }
+
+    .beneficio p {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--suave);
+      margin: 0;
+    }
+
+    .categorias {
+      padding: 45px 5% 38px;
+    }
+
+    .titulo-seccion {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin: 0 0 28px;
+      text-align: center;
+      font-size: clamp(17px, 2.5vw, 23px);
+      font-weight: 400;
+      letter-spacing: 4px;
+    }
+
+    .titulo-seccion::before,
+    .titulo-seccion::after {
+      content: "";
+      height: 1px;
+      background: #d8a5a0;
+      flex: 1;
+    }
+
+    .grilla-categorias {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .categoria {
+      display: block;
+      text-decoration: none;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #f0d4ce;
+      transition: transform .2s ease;
+    }
+
+    .categoria:hover { transform: translateY(-3px); }
+
+    .categoria img {
+      display: block;
+      width: 100%;
+      height: 155px;
+      object-fit: cover;
+      background: #f1e4dc;
+    }
+
+    .categoria span {
+      min-height: 40px;
+      padding: 12px 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .categoria .flecha {
+      color: #9b626a;
+      font-size: 19px;
+    }
+
+    .pedido {
+      position: relative;
+      padding: 35px 20px;
+      text-align: center;
+      background: linear-gradient(110deg, #f8e9e0, #fff8f2, #f3ded6);
+    }
+
+    .pedido h2 {
+      margin: 0 0 8px;
+      font-family: cursive;
+      font-size: 34px;
+      font-weight: 400;
+      color: #9f6870;
+    }
+
+    .pedido p {
+      max-width: 440px;
+      margin: 0 auto 18px;
+      color: var(--suave);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .boton-whatsapp {
+      display: inline-block;
+      padding: 13px 25px;
+      background: #c88e91;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .boton-whatsapp:hover { background: #ae777c; }
+
+    footer {
+      padding: 24px 15px;
+      background: #c88e91;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    footer p { margin: 7px 0; }
+
+    @media (max-width: 760px) {
+      .barra {
+        flex-direction: column;
+        padding: 18px 12px;
+        gap: 14px;
+      }
+
+      nav { gap: 17px; }
+
+      .iconos { display: none; }
+
+      .portada { grid-template-columns: 1fr; }
+
+      .portada-texto {
+        padding: 35px 25px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .portada h1 { font-size: 38px; }
+
+      .portada h1 span { font-size: 65px; }
+
+      .portada-foto,
+      .portada-foto img {
+        min-height: 260px;
+        height: 280px;
+      }
+
+      .beneficios {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 0;
+        padding: 28px 12px;
+      }
+
+      .beneficio:nth-child(2) { border-right: none; }
+
+      .grilla-categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+      }
+
+      .categoria img { height: 125px; }
+
+      .categoria span {
+        font-size: 10px;
+        padding: 10px 8px;
+      }
+
+      .categorias { padding: 35px 14px; }
+
+      .titulo-seccion { letter-spacing: 2px; gap: 10px; }
+    }
+
+    @media (max-width: 360px) {
+      nav { gap: 12px; }
+      nav a { font-size: 12px; }
+      .categoria img { height: 105px; }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="barra">
+    <a class="marca" href="index.html" aria-label="Descartables Vibras Mayorista">
+      <small>DESCARTABLES</small>
+      <strong>Vibras♡</strong>
+    </a>
 
-  <header>
-    <p class="marca">DESCARTABLES</p>
-    <h1>Vibras</h1>
-    <p class="subtitulo">Detalles simples para celebrar bonito</p>
+    <nav aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="#categorias">Categorías</a>
+      <a href="vasos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="iconos">
+      <a href="#categorias" aria-label="Buscar productos">⌕</a>
+      <a href="#pedido" aria-label="Consultar por WhatsApp">☏</a>
+    </div>
   </header>
-
-  <nav aria-label="Navegación principal">
-    <a href="index.html">Inicio</a>
-    <a href="#categorias">Productos</a>
-    <a href="ofertas.html">Ofertas</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
 
   <main>
     <section class="portada">
-      <p class="etiqueta">PARA CADA MOMENTO ESPECIAL</p>
-      <h2>Pequeños detalles,<br>grandes celebraciones</h2>
-      <p>Todo lo que necesitás para compartir, celebrar y disfrutar.</p>
-      <a class="boton" href="#categorias">Explorar productos</a>
-    </section>
+      <div class="portada-texto">
+        <div class="sobrelinea">Todo lo que necesitás,<br>en un solo lugar</div>
+        <div class="corazon">♥</div>
 
-    <section id="categorias" class="seccion-categorias">
-      <p class="etiqueta">ENCONTRÁ LO QUE BUSCÁS</p>
-      <h2>Nuestras categorías</h2>
-      <p class="introduccion">Elegí tus productos y prepará cada detalle a tu manera.</p>
+        <h1>
+          DESCARTABLES
+          <span>Vibras♡</span>
+        </h1>
 
-      <div class="rejilla">
-        <article class="categoria">
-        
-          <h3>Vasos</h3>
-          <p>Opciones para compartir cada brindis.</p>
-          <a href="vasos.html">Ver productos ↗</a>
-        </article>
+        <div class="sello">MAYORISTA</div>
 
-        <article class="categoria">
-          
-          <h3>Platos</h3>
-          <p>Prácticos para reuniones y celebraciones.</p>
-          <a href="platos.html">Ver productos ↗</a>
-        </article>
+        <p class="portada-descripcion">
+          Vasos, platos, envases, bolsas, servilletas,
+          cotillón y mucho más.
+        </p>
+      </div>
 
-        <article class="categoria">
-        
-          <h3>Envases</h3>
-          <p>Soluciones para guardar y llevar.</p>
-          <a href="envases.html">Ver productos ↗</a>
-        </article>
-
-        <article class="categoria">
-          
-          <h3>Bolsas</h3>
-          <p>Para entregar, organizar y transportar.</p>
-          <a href="bolsas.html">Ver productos ↗</a>
-        </article>
-
-        <article class="categoria">
-        
-          <h3>Servilletas</h3>
-          <p>Ese detalle que completa la mesa.</p>
-          <a href="servilletas.html">Ver productos ↗</a>
-        </article>
-
-        <article class="categoria">
-        
-          <h3>Cotillón</h3>
-          <p>Complementos para festejar a tu estilo.</p>
-          <a href="cotillon.html">Ver productos ↗</a>
-        </article>
+      <div class="portada-foto">
+        <img
+          src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=1200&q=85"
+          alt="Mesa preparada con artículos para servir y compartir"
+          onerror="this.onerror=null;this.src='https://acdn-us.mitiendanube.com/stores/001/394/502/products/diseno-sin-titulo-ae31f30cfb512fbbb317575996419677-480-0.webp';">
       </div>
     </section>
 
-    <section class="bloque-ofertas">
-      <p class="etiqueta">UN DETALLE PARA VOS</p>
-      <h2>Encontrá tu próximo favorito</h2>
-      <p>Conocé las promociones disponibles y consultanos por los productos.</p>
-      <a class="boton boton-claro" href="ofertas.html">Ver ofertas</a>
+    <section class="beneficios" aria-label="Beneficios">
+      <article class="beneficio">
+        <div class="simbolo">♧</div>
+        <h2>VENTAS<br>MAYORISTAS</h2>
+        <p>Ideal para tu negocio, emprendimiento o evento.</p>
+      </article>
+
+      <article class="beneficio">
+        <div class="simbolo">♢</div>
+        <h2>PRODUCTOS<br>DE CALIDAD</h2>
+        <p>Variedad de artículos para tus necesidades.</p>
+      </article>
+
+      <article class="beneficio">
+        <div class="simbolo">☆</div>
+        <h2>AMPLIO<br>CATÁLOGO</h2>
+        <p>Todas las categorías en un solo lugar.</p>
+      </article>
+
+      <article class="beneficio">
+        <div class="simbolo">♡</div>
+        <h2>CONSULTÁ<br>POR WHATSAPP</h2>
+        <p>Te asesoramos con tu pedido por encargo.</p>
+      </article>
     </section>
 
-    <section class="contacto-inicio">
-      <h2>¿Te ayudamos a elegir?</h2>
-      <p>Estamos para ayudarte a encontrar lo que necesitás.</p>
-      <a href="contacto.html" class="enlace-contacto">Contactanos ↗</a>
+    <section class="categorias" id="categorias">
+      <h2 class="titulo-seccion">NUESTRAS CATEGORÍAS</h2>
+
+      <div class="grilla-categorias">
+        <a class="categoria" href="vasos.html">
+          <img src="https://images.unsplash.com/photo-1532634896-26909d0d4b6c?auto=format&fit=crop&w=600&q=80" alt="Vasos y copas">
+          <span>VASOS Y COPAS <b class="flecha">→</b></span>
+        </a>
+
+        <a class="categoria" href="platos.html">
+          <img src="https://images.unsplash.com/photo-1579113800032-c38bd7635818?auto=format&fit=crop&w=600&q=80" alt="Platos">
+          <span>PLATOS <b class="flecha">→</b></span>
+        </a>
+
+        <a class="categoria" href="envases.html">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Envases">
+          <span>ENVASES <b class="flecha">→</b></span>
+        </a>
+
+        <a class="categoria" href="bolsas.html">
+          <img src="https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=600&q=80" alt="Bolsas">
+          <span>BOLSAS <b class="flecha">→</b></span>
+        </a>
+
+        <a class="categoria" href="servilletas.html">
+          <img src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=600&q=80" alt="Servilletas">
+          <span>SERVILLETAS <b class="flecha">→</b></span>
+        </a>
+
+        <a class="categoria" href="cotillon.html">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" alt="Cotillón">
+          <span>COTILLÓN <b class="flecha">→</b></span>
+        </a>
+
+        <a class="categoria" href="envases.html">
+          <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=600&q=80" alt="Cubiertos descartables">
+          <span>CUBIERTOS <b class="flecha">→</b></span>
+        </a>
+
+        <a class="categoria" href="vasos.html">
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=600&q=80" alt="Sorbetes y revolvedores">
+          <span>SORBETES Y REVOLVEDORES <b class="flecha">→</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="pedido" id="pedido">
+      <h2>Tu pedido, más fácil</h2>
+      <p>
+        Consultanos por los productos, las presentaciones
+        y las condiciones de compra mayorista.
+        Te ayudamos a encontrar lo que necesitás.
+      </p>
+      <a class="boton-whatsapp"
+         href="contacto.html">
+        ♡ CONSULTAR POR WHATSAPP
+      </a>
     </section>
   </main>
 
   <footer>
-    <p>Descartables Vibras</p>
-    <p>Gracias por elegirnos ♡</p>
+    <p>DESCARTABLES VIBRAS　 |　 MAYORISTA</p>
+    <p>♡</p>
   </footer>
-
 </body>
 </html>
