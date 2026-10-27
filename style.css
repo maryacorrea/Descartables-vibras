@@ -186,3 +186,6 @@ footer {
   }
 }
 /* Encabezado delicado */
+.numero {
+  display: none !important;
+}
